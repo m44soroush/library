@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "node server/server.js",
     "ng": "ng",
     "serve": "ng serve --delete-output-path=false",
     "aot": "ng serve --aot --delete-output-path=false",
