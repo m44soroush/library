@@ -35,17 +35,17 @@ app.engine('html', ngExpressEngine({
   ]
 }));
 
-function angularRouter(req, res) {
-
-  res.render('index', {
-    req,
-    res,
-    providers: [{
-      provide: 'serverUrl',
-      useValue: `${req.protocol}://${req.get('host')}`
-    }]
-  });
-}
+// function angularRouter(req, res) {
+//
+//   res.render('index', {
+//     req,
+//     res,
+//     providers: [{
+//       provide: 'serverUrl',
+//       useValue: `${req.protocol}://${req.get('host')}`
+//     }]
+//   });
+// }
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
@@ -61,7 +61,7 @@ app.use((req,res,next)=>{
 
 });
 
-app.get('/', angularRouter);
+// app.get('/', angularRouter);
 
 app.get('/api/books',(req,res)=>{
 

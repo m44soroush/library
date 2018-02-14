@@ -10,11 +10,9 @@ import {APP_BASE_HREF} from "@angular/common";
 export class BookService {
 
   booksChanged = new Subject<Book[]>();
-  url:string;
-  constructor(private http: HttpClient,
-              @Optional() @Inject(APP_BASE_HREF) origin: string) {
-              this.url=origin;
-
+  // url:string='http://localhost:4000/';
+  url:string='https://afternoon-bastion-73122.herokuapp.com/';
+  constructor(private http: HttpClient) {
   }
 
 
@@ -47,7 +45,7 @@ export class BookService {
   ];
 
   getBooks() {
-    this.http.get('/api/books')
+    this.http.get(this.url+'api/books')
       .subscribe(
         (res:any)=>{
           this.books=<Book[]>(res.books);
@@ -66,7 +64,7 @@ export class BookService {
 
   addBook(book: Book) {
 
-    this.http.post('/api/books',book)
+    this.http.post(this.url+'api/books',book)
       .subscribe((res:any)=> {
           console.log(res);
         },
@@ -82,7 +80,7 @@ export class BookService {
     this.books[index] = book;
     this.booksChanged.next(this.books.slice());
 
-    this.http.patch('/api/books/'+_id,book)
+    this.http.patch(this.url+'api/books'+_id,book)
       .subscribe((res:any)=> {
           console.log(res);
         },
@@ -104,7 +102,7 @@ export class BookService {
   deleteBook(index: number) {
     const _id=this.books[index]._id;
 
-    this.http.delete('/api/books/'+_id)
+    this.http.delete(this.url+'api/books'+_id)
       .subscribe((res:any)=> {
           this.books.splice(index, 1);
           this.booksChanged.next(this.books.slice());

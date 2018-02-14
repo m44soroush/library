@@ -16,13 +16,14 @@ import {UniversalInterceptor} from "./interceptor";
     ModuleMapLoaderModule,
     ServerTransferStateModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: UniversalInterceptor,
-    multi: true
-  }
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppServerModule {
 }
+
+// {
+// provide: HTTP_INTERCEPTORS,
+  // useClass: UniversalInterceptor,
+  // multi: true
+// }
