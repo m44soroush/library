@@ -1,0 +1,42 @@
+<div class="container my-5">
+  <div class="row my-5">
+    <div class="col-md-12">
+      <form (ngSubmit)="onSubmit()" [formGroup]="bookForm">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" class="form-control" formControlName="title">
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input type="text" id="author" formControlName="author" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="bno">BNO</label>
+          <input type="text" id="bno" formControlName="bno" class="form-control">
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-5">
+              <label for="pages">Pages</label>
+              <input type="number" id="pages" formControlName="pages" class="form-control">
+            </div>
+            <div class="col-sm-7">
+              <label for="date">Date</label>
+              <input type="date" id="date" formControlName="date" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="isbn">ISBN</label>
+          <input type="text" id="isbn" formControlName="isbn" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="reference">Reference</label>
+          <input type="text" id="reference" formControlName="reference" class="form-control">
+        </div>
+        <hr/>
+        <button type="submit" [disabled]="!bookForm.valid" class="btn btn-lg btn-success">{{editMode?'Update':'Save'}}</button>
+      </form>
+    </div>
+  </div>
+</div>

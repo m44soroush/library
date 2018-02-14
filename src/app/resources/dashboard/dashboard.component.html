@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row my-5">
+    <div class="col-md-12">
+      <p class="font-weight-light h2">Recently books added:</p>
+      <hr/>
+      <div [@dashboardListState]="books?.length">
+        <app-book-item *ngFor="let book of books;let i=index" [btnShow]="false" [getBook]="book"
+                       [index]="i"></app-book-item>
+      </div>
+    </div>
+  </div>
+</div>

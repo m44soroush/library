@@ -1,0 +1,59 @@
+.card, .card-body, img {
+  border-radius: 0;
+  border: none;
+}
+
+.card {
+  margin-top: 60px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+
+}
+
+#title{
+  border-radius: 10px;
+  background-color: black;
+  font-size: larger;
+  color: white;
+}
+
+
+.card:hover {
+
+}
+
+.activated{
+  opacity: 0.8;
+  background-color: #f2f2f2;
+  box-shadow: none;
+}
+.activated:focus,.activated:active{
+  outline: none !important;
+}
+
+.btn:hover{
+  cursor: pointer;
+  box-shadow: none;
+
+}
+.btn{
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+:host{
+  display: block;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
