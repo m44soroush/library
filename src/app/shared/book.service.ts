@@ -80,7 +80,7 @@ export class BookService {
     this.books[index] = book;
     this.booksChanged.next(this.books.slice());
 
-    this.http.patch(this.url+'api/books'+_id,book)
+    this.http.patch(this.url+'api/books/'+_id,book)
       .subscribe((res:any)=> {
           console.log(res);
         },
@@ -102,7 +102,7 @@ export class BookService {
   deleteBook(index: number) {
     const _id=this.books[index]._id;
 
-    this.http.delete(this.url+'api/books'+_id)
+    this.http.delete(this.url+'api/books/'+_id)
       .subscribe((res:any)=> {
           this.books.splice(index, 1);
           this.booksChanged.next(this.books.slice());
